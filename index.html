@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="miniRouting">
+<head>
+  <title>Mini Routing</title>
+  <link rel="stylesheet" href="style/main.css">
+</head>
+<body>
+
+  <div class="menu">
+          <ul>
+              <li><a ui-sref="home">Home</a></li>
+              <li>
+                  Products
+                  <ul>
+                      <li><a ui-sref="products({id: 'shoes'})">Shoes</a></li>
+                      <li><a ui-sref="products({id: 'socks'})">Socks</a></li>
+                  </ul>
+              </li>
+              <li><a ui-sref="settings"> Settings </a></li>
+          </ul>
+      </div>
+
+      <div class="view-container">
+          <div ui-view></div>
+      </div>
+  <!-- Angular CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
+    <!-- Apps -->
+    <script src="app.js"></script>
+
+    <!-- Controllers -->
+    <script src="home/homectrl.js"></script>
+    <script src="products/productsController.js"></script>
+    <script src="settings/settingsController.js"></script>
+
+    <!-- Services -->
+    <script src="products/productsService.js"></script>
+</body>
+</html>
